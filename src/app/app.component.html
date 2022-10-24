@@ -1,0 +1,17 @@
+<ng-container *ngIf="(rate$ | async) as rate; else loading">
+  <header>
+    <section>
+      1 USD = {{ rate.usd }} UAH
+    </section>
+    <section>
+      1 EUR = {{ rate.eur }} UAH
+    </section>
+  </header>
+
+  <router-outlet></router-outlet>
+</ng-container>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
+
